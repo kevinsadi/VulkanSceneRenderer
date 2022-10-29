@@ -13,6 +13,7 @@ namespace vsr {
 		VsrWindow(int w, int h, std::string name);
 		~VsrWindow();
 
+		// clean up, don't allow duplicate 
 		VsrWindow(const VsrWindow&) = delete;
 		VsrWindow& operator = (const VsrWindow&) = delete;
 

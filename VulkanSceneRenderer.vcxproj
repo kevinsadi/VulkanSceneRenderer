@@ -27,6 +27,9 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="vsr_window.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="simple_shader.vert" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
