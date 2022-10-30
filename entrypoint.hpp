@@ -2,6 +2,7 @@
 
 #include "vsr_window.hpp"
 #include "vsr_pipeline.hpp"
+#include "vsr_device.hpp"
 
 namespace vsr {
 	class EntryPoint {
@@ -14,6 +15,12 @@ namespace vsr {
 
 	private:
 		VsrWindow VsrWindow{WIDTH, HEIGHT, "Hello Vulkan!"};
-		VsrPipeline VsrPipeline{ "simple_shader.vert.spv", "simple_shader.frag.spv" };
+		VsrDevice vsrDevice{ VsrWindow };
+		VsrPipeline VsrPipeline{ 
+			vsrDevice, 
+			"Shaders/simple_shader.vert.spv", 
+			"Shaders/simple_shader.frag.spv", 
+			VsrPipeline::defaultPipelineConfigInfo(WIDTH, HEIGHT)
+		};
 	};
 }

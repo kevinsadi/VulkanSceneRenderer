@@ -27,6 +27,9 @@
     <ClInclude Include="vsr_pipeline.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="vsr_device.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="vsr_window.cpp">
@@ -39,6 +42,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="vsr_pipeline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vsr_device.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

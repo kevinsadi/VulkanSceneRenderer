@@ -20,12 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="entrypoint.hpp" />
+    <ClInclude Include="vsr_device.hpp" />
     <ClInclude Include="vsr_window.hpp" />
     <ClInclude Include="vsr_pipeline.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="entrypoint.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="vsr_device.cpp" />
     <ClCompile Include="vsr_pipeline.cpp" />
     <ClCompile Include="vsr_window.cpp" />
   </ItemGroup>
