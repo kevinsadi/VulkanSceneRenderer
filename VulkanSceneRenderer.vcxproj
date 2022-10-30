@@ -21,13 +21,17 @@
   <ItemGroup>
     <ClInclude Include="entrypoint.hpp" />
     <ClInclude Include="vsr_window.hpp" />
+    <ClInclude Include="vsr_pipeline.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="entrypoint.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="vsr_pipeline.cpp" />
     <ClCompile Include="vsr_window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="compile.bat" />
+    <None Include="simple_shader.frag" />
     <None Include="simple_shader.vert" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

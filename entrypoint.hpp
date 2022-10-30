@@ -1,6 +1,7 @@
 #pragma once
 
 #include "vsr_window.hpp"
+#include "vsr_pipeline.hpp"
 
 namespace vsr {
 	class EntryPoint {
@@ -13,5 +14,6 @@ namespace vsr {
 
 	private:
 		VsrWindow VsrWindow{WIDTH, HEIGHT, "Hello Vulkan!"};
+		VsrPipeline VsrPipeline{ "simple_shader.vert.spv", "simple_shader.frag.spv" };
 	};
 }
