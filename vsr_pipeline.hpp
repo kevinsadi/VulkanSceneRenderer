@@ -8,7 +8,20 @@
 
 namespace vsr {
 
-	struct PipelineConfigInfo {};
+	struct PipelineConfigInfo {
+		VkViewport viewport;
+		VkRect2D scissor;
+		VkPipelineViewportStateCreateInfo viewportInfo;
+		VkPipelineInputAssemblyStateCreateInfo inputAssemblyInfo;
+		VkPipelineRasterizationStateCreateInfo rasterizationInfo;
+		VkPipelineMultisampleStateCreateInfo multisampleInfo;
+		VkPipelineColorBlendAttachmentState colorBlendAttachment;
+		VkPipelineColorBlendStateCreateInfo colorBlendInfo;
+		VkPipelineDepthStencilStateCreateInfo depthStencilInfo;
+		VkPipelineLayout pipelineLayout = nullptr;
+		VkRenderPass renderPass = nullptr;
+		uint32_t subpass = 0;
+	};
 
 	class VsrPipeline {
 
@@ -18,7 +31,7 @@ namespace vsr {
 			const std::string& vertFilepath, 
 			const std::string& fragFilePath, 
 			const PipelineConfigInfo& configInfo);
-		~VsrPipeline() {}
+		~VsrPipeline();
 
 		VsrPipeline(const VsrPipeline&) = delete;
 		void operator = (const VsrPipeline&) = delete;
