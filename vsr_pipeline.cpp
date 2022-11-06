@@ -93,6 +93,7 @@ namespace vsr {
 		pipelineInfo.pDepthStencilState - &configInfo.depthStencilInfo;
 		pipelineInfo.pDynamicState = nullptr;
 
+
 		pipelineInfo.layout = configInfo.pipelineLayout;
 		pipelineInfo.renderPass = configInfo.renderPass;
 		pipelineInfo.subpass = configInfo.subpass;
@@ -118,10 +119,9 @@ namespace vsr {
 		}
 	}
 
-	PipelineConfigInfo VsrPipeline::defaultPipelineConfigInfo(uint32_t width, uint32_t height) {
+	void VsrPipeline::defaultPipelineConfigInfo(PipelineConfigInfo& configInfo, uint32_t width, uint32_t height) {
 		// there are many things we need to configure for our pipeline
 		// a lot of looking up member_variables here. 
-		PipelineConfigInfo configInfo{};
 
 		configInfo.inputAssemblyInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
 		configInfo.inputAssemblyInfo.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST; // specify geometry is triangles
@@ -183,8 +183,6 @@ namespace vsr {
 		configInfo.colorBlendInfo.blendConstants[1] = 0.0f;  // Optional
 		configInfo.colorBlendInfo.blendConstants[2] = 0.0f;  // Optional
 		configInfo.colorBlendInfo.blendConstants[3] = 0.0f;  // Optional
-
-		return configInfo;
 	}
 
 
