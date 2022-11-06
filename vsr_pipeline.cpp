@@ -21,6 +21,11 @@ namespace vsr {
 		vkDestroyPipeline(vsrDevice.device(), graphicsPipeline, nullptr);
 	}
 
+	void VsrPipeline::bind(VkCommandBuffer commandBuffer) {
+		vkCmdBindPipeline(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, graphicsPipeline);
+	}
+
+
 	std::vector<char> VsrPipeline::readFile(const std::string& filepath) {
 		std::ifstream file{ filepath, std::ios::ate | std::ios::binary };
 

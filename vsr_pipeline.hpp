@@ -40,6 +40,8 @@ namespace vsr {
 		VsrPipeline(const VsrPipeline&) = delete;
 		void operator = (const VsrPipeline&) = delete;
 
+		void bind(VkCommandBuffer commandBuffer);
+
 		static void defaultPipelineConfigInfo(PipelineConfigInfo& configInfo, uint32_t width, uint32_t height);
 
 
