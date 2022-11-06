@@ -85,14 +85,14 @@ namespace vsr {
 		pipelineInfo.sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
 		pipelineInfo.stageCount = 2;
 		pipelineInfo.pVertexInputState = &vertexInputInfo;
+		pipelineInfo.pStages = shaderStages;
 		pipelineInfo.pInputAssemblyState = &configInfo.inputAssemblyInfo;
 		pipelineInfo.pViewportState = &configInfo.viewportInfo;
 		pipelineInfo.pRasterizationState = &configInfo.rasterizationInfo;
 		pipelineInfo.pMultisampleState = &configInfo.multisampleInfo;
 		pipelineInfo.pColorBlendState = &configInfo.colorBlendInfo;
-		pipelineInfo.pDepthStencilState - &configInfo.depthStencilInfo;
+		pipelineInfo.pDepthStencilState = &configInfo.depthStencilInfo;
 		pipelineInfo.pDynamicState = nullptr;
-
 
 		pipelineInfo.layout = configInfo.pipelineLayout;
 		pipelineInfo.renderPass = configInfo.renderPass;
@@ -183,6 +183,17 @@ namespace vsr {
 		configInfo.colorBlendInfo.blendConstants[1] = 0.0f;  // Optional
 		configInfo.colorBlendInfo.blendConstants[2] = 0.0f;  // Optional
 		configInfo.colorBlendInfo.blendConstants[3] = 0.0f;  // Optional
+
+		configInfo.depthStencilInfo.sType = VK_STRUCTURE_TYPE_PIPELINE_DEPTH_STENCIL_STATE_CREATE_INFO;
+		configInfo.depthStencilInfo.depthTestEnable = VK_TRUE;
+		configInfo.depthStencilInfo.depthWriteEnable = VK_TRUE;
+		configInfo.depthStencilInfo.depthCompareOp = VK_COMPARE_OP_LESS;
+		configInfo.depthStencilInfo.depthBoundsTestEnable = VK_FALSE;
+		configInfo.depthStencilInfo.minDepthBounds = 0.0f;  // Optional
+		configInfo.depthStencilInfo.maxDepthBounds = 1.0f;  // Optional
+		configInfo.depthStencilInfo.stencilTestEnable = VK_FALSE;
+		configInfo.depthStencilInfo.front = {};  // Optional
+		configInfo.depthStencilInfo.back = {};   // Optional
 	}
 
 
